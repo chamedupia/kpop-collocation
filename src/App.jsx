@@ -17,9 +17,8 @@ const IMG_HISTORY = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAFACAIAA
 /* ---- 자체 CSS: 아티팩트의 사전 컴파일 Tailwind가 지원하지 않는
         임의값/불투명도 클래스를 대체 (항상 작동) ---- */
 const STYLE = `
-.kf-frame{width:100%;max-width:390px;height:844px;border-radius:2.2rem;overflow:hidden;display:flex;flex-direction:column;position:relative;}
+.kf-frame{width:100%;max-width:380px;height:760px;border-radius:2.2rem;overflow:hidden;display:flex;flex-direction:column;position:relative;}
 .kf-scroll{flex:1;overflow-y:auto;min-height:0;}
-
 .tt9{font-size:9px;line-height:1.3;}
 .tt10{font-size:10px;line-height:1.35;}
 .tt11{font-size:11px;line-height:1.4;}
@@ -308,8 +307,54 @@ const SONGS = [
     artist: "Stray Kids", title: "maniac",
     mood: "패기와 반항심", emoji: "⚡",
     cover: "from-orange-300 via-pink-300 to-rose-300",
-    lyricLines: [],
-    collocations: [],
+    lyricLines: ["나사 빠진 것처럼 미쳐 MANIAC", "핑핑 돌아버리겠지", "나사 빠진 것처럼 웃어 MANIAC"],
+    youtubeId: "OvioeS1ZZ7o", lyricStart: 57,
+    collocations: [
+      {
+        id: "nasa-ppajida", word: "나사가 빠지다", body: null,
+        meaning: "긴장이 풀려 마음이나 정신 상태가 느슨해진 것을 비유적으로 표현하는 관용구",
+        situation: "저항·해방·사회 도전. 기존 규범과 틀을 벗어나 자유롭게 행동하는 상황",
+        listener: "자기 자신 또는 자신의 자유로운 태도를 보는 청자",
+        attitude: "거침없고 자유로움. 규범을 의도적으로 벗어나는 반항적 태도",
+        function: "자기 해방 선언·규범 이탈 표출 (담화적 정체성 구축 장치)",
+        lyric: "\"나사 빠진 것처럼 미쳐 MANIAC\"처럼 스스로를 미친 사람에 비유하며 자유와 해방을 선언하는 맥락",
+        example: "오늘은 나사가 빠진 것처럼 마음대로 놀아 보자!",
+        category: "상태 연어 (관용구)", level: "중급",
+        scenes: ["반항", "해방", "자유", "비정상 선언"],
+        similar: [
+          { word: "나사가 풀리다", note: "나사가 빠지다와 유의. 긴장이 풀린 상태예요." },
+          { word: "나사를 죄다", note: "반의어. 긴장을 다시 잡는다는 뜻이에요." },
+          { word: "돌아버리다", note: "이성을 잃을 정도로 미치겠다는 표현이에요." },
+          { word: "고삐 풀린 망아지", note: "통제를 벗어나 자유롭게 행동하는 모습이에요." },
+        ],
+        deep: {
+          comic: [
+            { emoji: "🔩", text: "머리에 나사가 꽉 조여 있어요." },
+            { emoji: "😵‍💫", text: "나사가 하나 빠져요!" },
+            { emoji: "🤪", text: "엉뚱하고 자유롭게 행동해요." },
+            { emoji: "🎉", text: "규칙 없이 마음대로 놀아요." },
+          ],
+          crossSongs: [
+            { title: "Stray Kids - 4땡", context: "고삐 풀린 망아지, 나사 빠진 양아치" },
+            { title: "Stray Kids - Charmer", context: "나사를 하나 더 빼" },
+          ],
+          variations: [
+            { sit: "저항·해방·사회 도전", meaning: "기존 틀을 벗어나 자유롭게 행동 (긍정적·의도적)" },
+            { sit: "일상·청춘", meaning: "긴장 없이 편하게 노는 모습 (가벼운 유머)" },
+            { sit: "고민·불안·위로", meaning: "정신이 없고 실수가 잦은 상태 (부정적)" },
+          ],
+          quiz: {
+            q: "다음 중 '나사가 빠지다'의 의미로 가장 적절한 것은?",
+            choices: [
+              { text: "긴장이 풀려 정신이 느슨하다", correct: true },
+              { text: "화가 나서 참을 수 없다", correct: false },
+              { text: "기대에 부풀어 들뜨다", correct: false },
+            ],
+            explain: "'나사가 빠지다'는 의자의 나사가 빠지면 고장나는 것처럼, 정신이 없거나 이상한 행동을 하는 사람을 비유하는 관용구입니다.",
+          },
+        },
+      },
+    ],
   },
   {
     id: "bts-idol", situation: "resist",
