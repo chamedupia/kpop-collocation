@@ -17,6 +17,8 @@ const IMG_HISTORY = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAFACAIAA
 /* ---- 자체 CSS: 아티팩트의 사전 컴파일 Tailwind가 지원하지 않는
         임의값/불투명도 클래스를 대체 (항상 작동) ---- */
 const STYLE = `
+.kf-frame{width:100%;max-width:390px;height:844px;border-radius:2.2rem;overflow:hidden;display:flex;flex-direction:column;position:relative;}
+.kf-scroll{flex:1;overflow-y:auto;min-height:0;}
 
 .tt9{font-size:9px;line-height:1.3;}
 .tt10{font-size:10px;line-height:1.35;}
@@ -1745,11 +1747,13 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-violet-50 via-purple-50 to-pink-50 flex flex-col">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-violet-100 to-pink-100 p-4">
       <style>{STYLE}</style>
-      <StatusBar />
-      <div className="flex-1 overflow-y-auto">{content}</div>
-      <BottomNav active={tab} onNav={onNav} />
+      <div className="kf-frame shadow-2xl border-4 border-white bg-gradient-to-b from-violet-50 via-purple-50 to-pink-50">
+        <StatusBar />
+        <div className="kf-scroll">{content}</div>
+        <BottomNav active={tab} onNav={onNav} />
+      </div>
     </div>
   );
 }
